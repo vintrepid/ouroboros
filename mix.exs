@@ -7,7 +7,6 @@ defmodule Ouroboros.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -70,17 +69,18 @@ defmodule Ouroboros.MixProject do
 
       # Authentication & authz
       {:bodyguard, "~> 2.4"},
+      # cancan
 
       # Livebook (latest, GitHub tag)
       # {:livebook, github: "livebook-dev/livebook", tag: "v0.15.5", only: :dev},
 
       # A/B testing & feature flags
-      {:fun_with_flags, "~> 1.13"},
+      # {:fun_with_flags, "~> 1.13"},
 
       # Monitoring & error tracking
-      {:sentry, "~> 10.9"},
-      {:honeybadger, "~> 0.24"},
-      {:appsignal, "~> 2.15"},
+      # {:sentry, "~> 10.9"},
+      # {:honeybadger, "~> 0.24"},
+      # {:appsignal, "~> 2.15"},
 
       # Background jobs
       {:oban, "~> 2.19"},

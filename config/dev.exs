@@ -2,13 +2,15 @@ import Config
 
 # Configure your database
 config :ouroboros, Ouroboros.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("PG_USERNAME") || "postgres",
+  password: System.get_env("PG_PASSWORD") || "postgres",
   hostname: "localhost",
-  database: "ouroboros_dev",
+  database: "ouroboros",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
+
+config :ouroboros, ecto_repos: [Ouroboros.Repo]
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
@@ -77,3 +79,7 @@ config :phoenix_live_view, :debug_heex_annotations, true
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :esbuild, :version, "0.25.0"
+
+config :tailwind, :version, "4.0.9"
